@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Plant Identifier - Delete Account</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="logo">
+                <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M20 5C20 5 15 10 15 15C15 17.7614 17.2386 20 20 20C22.7614 20 25 17.7614 25 15C25 10 20 5 20 5Z" fill="#4CAF50"/>
+                    <path d="M20 20C20 20 12 22 12 28C12 31.3137 14.6863 34 18 34C21.3137 34 24 31.3137 24 28C24 25 20 20 20 20Z" fill="#66BB6A"/>
+                    <path d="M20 20C20 20 28 22 28 28C28 31.3137 25.3137 34 22 34C18.6863 34 16 31.3137 16 28C16 25 20 20 20 20Z" fill="#81C784"/>
+                </svg>
+                <h1>AI Plant Identifier</h1>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <div class="card">
+                <div class="card-header">
+                    <h2>Account Deletion Request</h2>
+                    <p class="subtitle">We're sorry to see you go. Please sign in to delete your account and all associated data.</p>
+                </div>
+
+                <div id="authSection" class="auth-section">
+                    <form id="loginForm" class="form">
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" required placeholder="your.email@example.com">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <input type="password" id="password" name="password" required placeholder="Enter your password">
+                        </div>
+
+                        <button type="submit" class="btn btn-primary" id="signInBtn">
+                            <span class="btn-text">Sign In</span>
+                            <span class="spinner hidden"></span>
+                        </button>
+
+                        <div id="errorMessage" class="error-message hidden"></div>
+                    </form>
+                </div>
+
+                <div id="deleteSection" class="delete-section hidden">
+                    <div class="user-info">
+                        <div class="info-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="12" cy="12" r="10" stroke="#4CAF50" stroke-width="2"/>
+                                <path d="M12 8V12M12 16H12.01" stroke="#4CAF50" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <p class="info-title">Signed in as:</p>
+                            <p class="info-email" id="userEmail"></p>
+                        </div>
+                    </div>
+
+                    <div class="warning-box">
+                        <div class="warning-icon">⚠️</div>
+                        <div class="warning-content">
+                            <h3>Warning: This action cannot be undone</h3>
+                            <p>Deleting your account will permanently remove:</p>
+                            <ul>
+                                <li>Your user profile and authentication credentials</li>
+                                <li>All plant identification history</li>
+                                <li>Plant care schedules and tracking data</li>
+                                <li>Credits and subscription information</li>
+                                <li>Any other data associated with your account</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="confirmation-box">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="confirmCheckbox">
+                            <span>I understand that this action is permanent and cannot be reversed</span>
+                        </label>
+                    </div>
+
+                    <div class="button-group">
+                        <button type="button" class="btn btn-secondary" id="cancelBtn">Cancel</button>
+                        <button type="button" class="btn btn-danger" id="deleteBtn" disabled>
+                            <span class="btn-text">Delete My Account</span>
+                            <span class="spinner hidden"></span>
+                        </button>
+                    </div>
+
+                    <div id="deleteError" class="error-message hidden"></div>
+                </div>
+
+                <div id="successSection" class="success-section hidden">
+                    <div class="success-icon">
+                        <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="32" cy="32" r="30" fill="#4CAF50" opacity="0.1"/>
+                            <circle cx="32" cy="32" r="24" stroke="#4CAF50" stroke-width="2"/>
+                            <path d="M22 32L28 38L42 24" stroke="#4CAF50" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h2>Account Successfully Deleted</h2>
+                    <p>Your account and all associated data have been permanently removed from our systems.</p>
+                    <p class="farewell">Thank you for using AI Plant Identifier. We hope to see you again in the future!</p>
+                </div>
+            </div>
+
+            <div class="help-section">
+                <p>Need help? Have questions about data deletion?</p>
+                <p>Contact us at: <a href="mailto:support@aiplantidentifier.com">support@aiplantidentifier.com</a></p>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <p>&copy; 2025 AI Plant Identifier. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+            </div>
+        </footer>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-database-compat.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
